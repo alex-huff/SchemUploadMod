@@ -2,7 +2,10 @@ package dev.phonis.schemupload;
 
 import dev.phonis.schemupload.commands.UploadCommand;
 import dev.phonis.schemupload.networking.SUChannel;
+import keybindings.KeyEvent;
+import keybindings.Keybinds;
 import net.minecraftforge.client.ClientCommandHandler;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -17,7 +20,9 @@ public class SchemUploadMod {
     @EventHandler
     public void init(FMLInitializationEvent event) {
         SUChannel.initialize();
+        Keybinds.register();
         ClientCommandHandler.instance.registerCommand(new UploadCommand());
+        MinecraftForge.EVENT_BUS.register(new KeyEvent());
     }
 
 }
