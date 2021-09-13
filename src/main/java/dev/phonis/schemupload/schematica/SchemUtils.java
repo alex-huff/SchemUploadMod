@@ -9,6 +9,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.ChatComponentText;
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutput;
@@ -48,12 +49,12 @@ public class SchemUtils {
 
             packets.forEach(packet -> SUChannel.instance.send(packet));
         } catch (Throwable e) {
-            Minecraft.getMinecraft().thePlayer.sendChatMessage("Failed to retrieve loaded schematica.");
+            Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("Failed to retrieve loaded schematica."));
             e.printStackTrace();
         }
     }
 
-    private static byte[] getLoadedSchemData(BlockPos.MutableBlockPos startPosition) throws IOException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException, ClassNotFoundException, NoSuchFieldException {
+    private static byte[] getLoadedSchemData(BlockPos.MutableBlockPos startPosition) throws IOException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, InstantiationException, ClassNotFoundException, NoSuchFieldException, NullPointerException {
         Class<?> renderSchematicClass = Class.forName("com.github.lunatrius.schematica.client.renderer.RenderSchematic");
         Field worldField = renderSchematicClass.getDeclaredField("world");
 
