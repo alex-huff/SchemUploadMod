@@ -1,4 +1,4 @@
-package keybindings;
+package dev.phonis.schemupload.keybindings;
 
 import dev.phonis.schemupload.schematica.SchemUtils;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;

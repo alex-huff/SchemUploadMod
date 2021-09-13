@@ -1,4 +1,4 @@
-package keybindings;
+package dev.phonis.schemupload.keybindings;
 
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraftforge.fml.client.registry.ClientRegistry;

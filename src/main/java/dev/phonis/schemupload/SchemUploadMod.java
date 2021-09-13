@@ -1,9 +1,9 @@
 package dev.phonis.schemupload;
 
 import dev.phonis.schemupload.commands.UploadCommand;
+import dev.phonis.schemupload.keybindings.KeyEvent;
+import dev.phonis.schemupload.keybindings.Keybinds;
 import dev.phonis.schemupload.networking.SUChannel;
-import keybindings.KeyEvent;
-import keybindings.Keybinds;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
